@@ -1,0 +1,143 @@
+:root {
+  --azul: #2b5fb0;
+  --azul-oscuro: #1c3f7a;
+  --verde: #2e8b57;
+  --rojo: #c0392b;
+  --gris-fondo: #f4f6f9;
+  --gris-borde: #d7dce3;
+  --texto: #22282f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--gris-fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+  color: #fff;
+  padding: 36px 0;
+}
+
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+}
+
+.subtitle {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.98rem;
+}
+
+main {
+  padding: 30px 20px 50px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--azul-oscuro);
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--gris-fondo);
+  padding-bottom: 8px;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--gris-borde);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+input.valido { border-color: var(--verde); background: #f1fbf5; }
+input.invalido { border-color: var(--rojo); background: #fdf3f2; }
+
+.ayuda {
+  display: block;
+  color: #667;
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+.ayuda code {
+  background: #eef1f6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.mensaje {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 1.1em;
+}
+
+.mensaje.ok { color: var(--verde); }
+.mensaje.error { color: var(--rojo); }
+
+.resultado {
+  background: #f8f9fb;
+  border: 1px dashed var(--gris-borde);
+  border-radius: 6px;
+  padding: 14px;
+  min-height: 40px;
+  font-family: "Consolas", monospace;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.resultado mark {
+  background: #ffe08a;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.site-footer {
+  background: var(--azul-oscuro);
+  color: #cfe0f7;
+  padding: 16px 0;
+  font-size: 0.8rem;
+  text-align: center;
+}

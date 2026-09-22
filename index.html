@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expresiones Regulares en JavaScript — Ejemplo práctico</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Expresiones Regulares en JavaScript</h1>
+      <p class="subtitle">Ejemplo funcional: validador de formulario + probador de regex en vivo</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>1. Validador de formulario</h2>
+      <p>Cada campo se valida en tiempo real con una expresión regular distinta. Escribe algo y observa el borde y el mensaje cambiar.</p>
+
+      <form id="formulario" novalidate>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="text" id="correo" placeholder="ejemplo@dominio.com" autocomplete="off">
+          <small class="ayuda">Regex: <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code></small>
+          <p class="mensaje" data-for="correo"></p>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono (formato ####-####)</label>
+          <input type="text" id="telefono" placeholder="7123-4567" autocomplete="off">
+          <small class="ayuda">Regex: <code>/^\d{4}-\d{4}$/</code></small>
+          <p class="mensaje" data-for="telefono"></p>
+        </div>
+
+        <div class="campo">
+          <label for="password">Contraseña segura</label>
+          <input type="password" id="password" placeholder="Mín. 8 caracteres" autocomplete="off">
+          <small class="ayuda">Regex: <code>/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/</code></small>
+          <p class="mensaje" data-for="password"></p>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha (dd/mm/aaaa)</label>
+          <input type="text" id="fecha" placeholder="22/09/2026" autocomplete="off">
+          <small class="ayuda">Regex: <code>/^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/</code></small>
+          <p class="mensaje" data-for="fecha"></p>
+        </div>
+
+        <div class="campo">
+          <label for="url">Sitio web (URL)</label>
+          <input type="text" id="url" placeholder="https://www.ejemplo.com" autocomplete="off">
+          <small class="ayuda">Regex: <code>/^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[\w\-./?%&=]*)?$/</code></small>
+          <p class="mensaje" data-for="url"></p>
+        </div>
+
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>2. Probador de expresiones regulares en vivo</h2>
+      <p>Escribe tu propia expresión regular y un texto de prueba: las coincidencias se resaltan automáticamente.</p>
+
+      <div class="campo">
+        <label for="patronLive">Expresión regular</label>
+        <input type="text" id="patronLive" value="[0-9]+" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="flagsLive">Flags</label>
+        <input type="text" id="flagsLive" value="g" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="textoLive">Texto de prueba</label>
+        <textarea id="textoLive" rows="4">Mi teléfono es 7123-4567 y nací en 2004.</textarea>
+      </div>
+      <div class="campo">
+        <p><strong>Resultado (coincidencias resaltadas):</strong></p>
+        <div id="resultadoLive" class="resultado"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Trabajo de investigación aplicada — Escuela de Computación, Universidad Don Bosco · Ejemplo generado como parte de la actividad de expresiones regulares.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
